@@ -8,6 +8,9 @@ app.listen(process.env.PORT ||3000, function() {
   
 })
 
+app.get('/',(request,response)=>{
+	response.sendFile(__dirname + "/index.html");
+})
 app.get('/scoreJSON', (request,response)=>{
 	var data = {};
 	axios.get('http://www.nfl.com/liveupdate/scores/scores.json').then((resp) => {
