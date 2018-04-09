@@ -12,7 +12,7 @@ app.get('/scoreJSON', (request,response)=>{
 	var data = {};
 	axios.get('http://www.nfl.com/liveupdate/scores/scores.json').then((resp) => {
 		response.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-		response.setHeader('Access-Control-Allow-Origin', 'https://conal-nfl.herokuapp.com/');
+		response.setHeader('Access-Control-Allow-Origin', 'https://conal-nfl.herokuapp.com');
 		response.send(resp.data);
 	});
 })
