@@ -9,7 +9,9 @@ app.get('/',(request,response)=>{
 	response.sendFile(__dirname + "/index.html");
 })
 
-
+app.get('/images/gitlogo',(request,response)=>{
+	response.sendFile(__dirname + "/images/octocat.png");
+})
 
 app.get('/scoreJSON', (request,response)=>{
 	var data = {};
