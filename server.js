@@ -10,7 +10,7 @@ app.get('/',(request,response)=>{
 })
 
 app.get('/images/gitlogo',(request,response)=>{
-	response.sendFile(__dirname + "/images/octocat.png");
+	response.sendFile(__dirname + "/images/Octocat.png");
 })
 
 app.get('/scoreJSON', (request,response)=>{
