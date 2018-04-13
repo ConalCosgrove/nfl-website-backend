@@ -69,6 +69,6 @@ app.get('/fakescoreJSON',(request,response)=>{
                                       }
                                   };
 	response.setHeader('Access-Control-Allow-Origin', '*');
-	response.send();
+	response.send(data);
 })
 
