@@ -70,7 +70,7 @@ app.get('/fakescoreJSON',(request,response)=>{
                                   };
 	response.setHeader('Access-Control-Allow-Origin', '*');
 	response.send(data);
-})
+});
 
 app.get('/images-2018',(request,repsonse) => {
   var data = {
@@ -81,5 +81,5 @@ app.get('/images-2018',(request,repsonse) => {
   };
   response.setHeader('Access-Control-Allow-Origin', '*');
   response.send(data);
-})
+});
 
