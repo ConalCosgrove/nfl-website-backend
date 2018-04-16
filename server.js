@@ -72,7 +72,7 @@ app.get('/fakescoreJSON',(request,response)=>{
 	response.send(data);
 });
 
-app.get('/images-2018',(request,repsonse) => {
+app.get('/images-2018',(request,response) => {
   var data = {
     "0":"https://scontent-lhr3-1.cdninstagram.com/vp/083a808a4b0d7edbdfa2f911cc42102d/5B540A36/t51.2885-15/s640x640/sh0.08/e35/27880379_539719523093485_7561558132430733312_n.jpg",
     "1":"https://scontent-lhr3-1.cdninstagram.com/vp/2fc43cdcad8f0bf15b8d2bb4f95a2cb3/5B6B90D5/t51.2885-15/e35/23507829_1982430162015288_2608747334405718016_n.jpg",
