@@ -22,47 +22,47 @@ app.get('/scoreJSON', (request,response)=>{
 })
 
 app.get('/fakescoreJSON',(request,response)=>{
-	var data = 					{ "2018090900":{
+	var data = 					{ "2017090900":{
                                       "home":{"abbr":"PHI","score":{"T":"51"}},
                                       "away":{"abbr":"GB","score":{"T":"10"}},
                                       "qtr":"Final","clock":"13:12","date":"09 - 09 - 18", "stadium":"US Bank Stadium"
                                       },
-                                  "2018090901":{
+                                  "2017090901":{
                                       "home":{"abbr":"LA","score":{"T":"51"}},
                                       "away":{"abbr":"TEN","score":{"T":"10"}},
                                       "qtr":"Final","clock":"13:12","date":"09 - 09 - 18", "stadium":"US Bank Stadium"
                                       },
-                                  "2018090902":{
+                                  "2017090902":{
                                       "home":{"abbr":"JAX","score":{"T":"51"}},
                                       "away":{"abbr":"LAC","score":{"T":"10"}},
                                       "qtr":"Final","clock":"13:12","date":"09 - 09 - 18", "stadium":"US Bank Stadium"
                                       },
-                                  "2018090903":{
+                                  "2017090903":{
                                       "home":{"abbr":"CIN","score":{"T":"51"}},
                                       "away":{"abbr":"KC","score":{"T":"10"}},
                                       "qtr":"Final","clock":"13:12","date":"09 - 09 - 18", "stadium":"US Bank Stadium"
                                       },
-                                  "2018090904":{
+                                  "2017090904":{
                                       "home":{"abbr":"CLE","score":{"T":"51"}},
                                       "away":{"abbr":"IND","score":{"T":"10"}},
                                       "qtr":"Final","clock":"13:12","date":"09 - 09 - 18", "stadium":"US Bank Stadium"
                                       },
-                                  "2018090905":{
+                                  "2017090905":{
                                       "home":{"abbr":"NYG","score":{"T":"51"}},
                                       "away":{"abbr":"PIT","score":{"T":"10"}},
                                       "qtr":"Final","clock":"13:12","date":"09 - 09 - 18", "stadium":"US Bank Stadium"
                                       },
-                                  "2018090906":{
+                                  "2017090906":{
                                       "home":{"abbr":"SF","score":{"T":"51"}},
                                       "away":{"abbr":"NYJ","score":{"T":"10"}},
                                       "qtr":"Final","clock":"13:12","date":"09 - 09 - 18", "stadium":"US Bank Stadium"
                                       },
-                                  "2018090907":{
+                                  "2017090907":{
                                       "home":{"abbr":"HOU","score":{"T":"51"}},
                                       "away":{"abbr":"MIA","score":{"T":"10"}},
                                       "qtr":"Final","clock":"13:12","date":"09 - 09 - 18", "stadium":"US Bank Stadium"
                                       },
-                                  "2018090908":{
+                                  "2017090908":{
                                       "home":{"abbr":"MIN","score":{"T":"29"}},
                                       "away":{"abbr":"NO","score":{"T":"24"}},
                                       "qtr":"4","clock":"00:00","date":"09 - 09 - 18", "stadium":"US Bank Stadium"
