@@ -1,6 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
+const blogdata = require('./data/blogdata.json');
 
 app.listen(process.env.PORT ||8000, function() {
 })
@@ -95,4 +96,10 @@ app.get('/images-2018',(request,response) => {
   response.setHeader('Access-Control-Allow-Origin', '*');
   response.send(data);
 });
+
+app.get('/blogdata',(request,response) => {
+    
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.send(blogdata);
+  });
 
