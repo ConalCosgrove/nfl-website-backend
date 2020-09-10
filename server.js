@@ -2,6 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 const blogdata = require('./data/blogdata.json');
+const token = process.env.TOKEN || '';
 
 app.listen(process.env.PORT ||8000, function() {
 })
@@ -16,7 +17,11 @@ app.get('/images/gitlogo',(request,response)=>{
 
 app.get('/scoreJSON', (request,response)=>{
 	var data = {};
-	axios.get('http://www.nfl.com/liveupdate/scores/scores.json').then((resp) => {
+	axios.get('https://api.nfl.com/football/v1/games?season=2020&seasonType=REG&week=1&withExternalIds=true', {
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    }).then((resp) => {
 		response.setHeader('Access-Control-Allow-Origin', '*');
 		response.send(resp.data);
 	});
