@@ -1,11 +1,21 @@
 import axios from 'axios';
-import {weekInformation, altGameInformationForWeek, inGameInfo } from './nflApiRoutes.js';
+import { weekInformation, altGameInformationForWeek, inGameInfo } from './nflApiRoutes.js';
+import { getApiToken } from './getApiToken.js';
+let token = getApiToken();
+let configuredQuery;
 
-const configuredQuery = axios.create({
-  headers: {
-    authorization: `Bearer ${process.env.TOKEN}`
-  }
-});
+const refreshTokenAndQuery = async () => {
+  console.log('refreshing api token...')
+  token = await getApiToken();
+  console.log('new token is', token)
+  configuredQuery = axios.create({
+    headers: {
+      authorization: `Bearer ${token}`
+    }
+  })
+}
+refreshTokenAndQuery();
+setInterval(refreshTokenAndQuery, 3540000);
 
 export const getCurrentWeekData = async () => {
   const weekData = await configuredQuery.get(weekInformation)
