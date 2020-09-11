@@ -1,7 +1,11 @@
 import webdriver from 'selenium-webdriver';
 
 export const getApiToken = async () => {
-  let driver = await new webdriver.Builder().forBrowser('chrome').build();
+  let options = new chrome.Options();
+  options.addArguments("--headless");
+  options.addArguments("--disable-gpu");
+  options.addArguments("--no-sandbox");
+  let driver = await new webdriver.Builder().forBrowser('chrome').setChromeOptions(options).build();
   let token = '';
   try {
     await driver.get('https://www.nfl.com/scores');
