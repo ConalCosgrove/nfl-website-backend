@@ -1,5 +1,6 @@
 {
   "name": "database",
+  "type": "module",
   "version": "1.0.0",
   "description": "Simple CRUD Database application",
   "main": "server.js",

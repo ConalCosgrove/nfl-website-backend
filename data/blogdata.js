@@ -1,4 +1,4 @@
-{
+export const blogData = {
 	"home":{
 		"article":[
 			{"id":"0","slug":"Top 10 RPGs with Silent Protagonists","snippet":"Are we buzzfeed yet?."},
