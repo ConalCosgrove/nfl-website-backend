@@ -13,7 +13,12 @@ export const getApiToken = async () => {
     token = await driver.executeScript('return api_token');
 
   } finally {
-    await driver.quit();
+    try{
+      await driver.quit();
+    } catch(err) {
+      console.log(err)
+    }
+    
     return token.access_token;
   }
 };
