@@ -1,4 +1,5 @@
 import webdriver from 'selenium-webdriver';
+import chrome from 'selenium-webdriver/chrome.js';
 
 export const getApiToken = async () => {
   let options = new chrome.Options();
