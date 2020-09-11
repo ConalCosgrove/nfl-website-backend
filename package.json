@@ -2,6 +2,9 @@
   "name": "database",
   "type": "module",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
   "description": "Simple CRUD Database application",
   "main": "server.js",
   "dependencies": {
