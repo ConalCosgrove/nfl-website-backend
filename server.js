@@ -25,7 +25,9 @@ app.get('/scoreJSON', (request,response)=>{
         else {
             response.status(400)
         }
-	});
+	}).catch((err) => {
+        response.status(400).send({error: err})
+    })
 })
 
 app.get('/fakescoreJSON',(request,response)=>{

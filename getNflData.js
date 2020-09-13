@@ -1,21 +1,32 @@
 import axios from 'axios';
 import { weekInformation, altGameInformationForWeek, inGameInfo } from './nflApiRoutes.js';
 import { getApiToken } from './getApiToken.js';
-let token = getApiToken();
+let token;
 let configuredQuery;
+
+const createConfiguredQuery = (token) => {
+  return axios.create({
+    headers: {
+      authorization: `Bearer ${token}`
+    }
+  });
+}
 
 const refreshTokenAndQuery = async () => {
   console.log('refreshing api token...')
   token = await getApiToken();
   console.log('new token is', token)
-  configuredQuery = axios.create({
-    headers: {
-      authorization: `Bearer ${token}`
-    }
-  })
+  configuredQuery = createConfiguredQuery(token);
 }
-refreshTokenAndQuery();
-setInterval(refreshTokenAndQuery, 3540000);
+
+const main = async () => {
+  console.log('getting api token...');
+  token = await getApiToken();
+  console.log('api token is', token);
+  configuredQuery = createConfiguredQuery(token);
+  setInterval(refreshTokenAndQuery, 3540000);
+}
+
 
 export const getCurrentWeekData = async () => {
   const weekData = await configuredQuery.get(weekInformation)
@@ -37,14 +48,16 @@ export const getCurrentWeeksGames = async () => {
 }
 
 export const getCurrentWeeksGameInfo = async () => {
+  if (!token || !configuredQuery) throw new Error('Server is still initializing');
   const games = await getCurrentWeeksGames();
   const gamesWithDetailIds = games.map((game) => game.gameDetailId).filter((id) => id !== null);
-  const gameIdString = gamesWithDetailIds.join(',');
+  const gameIdString = gamesWithDetailIds.join('","');
   const gameDetails = await configuredQuery.get(inGameInfo(gameIdString))
   gameDetails.data.data.viewer.gameDetailsByIds.forEach((gameDeets) => {
     const gameIndex = games.find((game) => game.gameDetailId === gameDeets.id);
-    gameIndex.information = gameDeets;
+    if (gameIndex) gameIndex.information = gameDeets;
   });
   return games;
 }
 
+main();
